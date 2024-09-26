@@ -13,7 +13,6 @@ import java.util.Scanner;
  * - at any time, the user can type quit to quit the program<br/>
  */
 public class Main {
-
     /**
      * This is the main entry point of our Translation System!<br/>
      * A class implementing the Translator interface is created and passed into a call to runProgram.
@@ -26,7 +25,6 @@ public class Main {
         //            to try out the whole program!
         // Translator translator = new JSONTranslator(null);
         Translator translator = new InLabByHandTranslator();
-
         runProgram(translator);
     }
 
