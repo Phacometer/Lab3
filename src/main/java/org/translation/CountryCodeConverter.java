@@ -13,7 +13,7 @@ public class CountryCodeConverter {
 
     private String[] codes;
     private int lengthCountries;
-    private final int positionCode = 3;
+    private final int positionCode = 2;
 
     /**
      * Default constructor which will load the country codes from "country-codes.txt"
