@@ -13,7 +13,6 @@ public class CountryCodeConverter {
 
     private String[] codes;
     private int lengthCountries;
-    private final int positionCode = 2;
 
     /**
      * Default constructor which will load the country codes from "country-codes.txt"
@@ -49,9 +48,9 @@ public class CountryCodeConverter {
      * @return the name of the country corresponding to the code
      */
     public String fromCountryCode(String code) {
-        for (int i = 0; i < codes.length; i++) {
-            if (codes[i].toLowerCase().contains(code.toLowerCase())) {
-                String[] temp = codes[i].split("\t");
+        for (String oneEntry : codes) {
+            String[] temp = oneEntry.split("\t");
+            if (temp[2].toLowerCase().equals(code.toLowerCase())) {
                 return temp[0];
             }
         }
@@ -64,12 +63,13 @@ public class CountryCodeConverter {
      * @return the 3-letter code of the country
      */
     public String fromCountry(String country) {
-        for (int i = 0; i < codes.length; i++) {
-            if (codes[i].toLowerCase().contains(country.toLowerCase())) {
-                String[] temp = codes[i].split("\t");
-                return temp[positionCode];
+        for (String oneEntry : codes) {
+            String[] temp = oneEntry.split("\t");
+            if (temp[0].toLowerCase().equals(country.toLowerCase())) {
+                return temp[2];
             }
         }
+
         return null;
     }
 
