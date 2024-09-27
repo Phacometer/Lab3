@@ -78,6 +78,6 @@ public class CountryCodeConverter {
      * @return how many countries are included in this code converter.
      */
     public int getNumCountries() {
-        return lengthCountries - 1;
+        return lengthCountries;
     }
 }
