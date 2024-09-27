@@ -33,10 +33,9 @@ public class CountryCodeConverter {
         try {
             List<String> lines = Files.readAllLines(Paths.get(getClass()
                     .getClassLoader().getResource(filename).toURI()));
-
+            lines.remove(0);
             codes = lines.toArray(new String[0]);
             lengthCountries = codes.length;
-
         }
         catch (IOException | URISyntaxException ex) {
             throw new RuntimeException(ex);
@@ -79,6 +78,6 @@ public class CountryCodeConverter {
      * @return how many countries are included in this code converter.
      */
     public int getNumCountries() {
-        return lengthCountries - 1;
+        return lengthCountries;
     }
 }
